@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'tokosaya',
     loadChildren: () => import('./page/tokosaya/tokosaya.module').then( m => m.TokosayaPageModule)
+  },
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./page/resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
   }
 
 ];
