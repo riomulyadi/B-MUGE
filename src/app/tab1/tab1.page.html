@@ -1,41 +1,120 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Halaman Beranda
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <img src="/assets/img.svg" alt="" style="position: absolute;" /> 
+  <div style="text-align: center;">
+      <img src="/assets/logo1.png" alt="" style="width: 50%; position: relative; padding-top: 10px;"/>
+  </div>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-button color="warning" expand="block">
+            <ion-icon name="arrow-round-up" style="padding-right: 5px;"></ion-icon>
+            <ion-label>TOP UP</ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="warning" expand="block">
+            <ion-icon name="arrow-round-down" style="padding-right: 5px;"></ion-icon>
+            <ion-label>TARIK</ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="warning" expand="block">
+            <ion-icon name="cash" style="padding-right: 5px;"></ion-icon>
+            <ion-label>HISTORY</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-item-divider sticky>
+    <ion-label>MUGE Service</ion-label>
+  </ion-item-divider>
+  
+   <ion-row>
+    <ion-col>
+      <ion-button expand="block" color="warning" fill="outline">
+        <ion-icon name="restaurant" style="padding-right: 10px;"></ion-icon>
+        <ion-label>Makanan</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="warning" fill="outline">
+        <ion-icon name="shirt" style="padding-right: 10px;"></ion-icon>
+        <ion-label>Pakaian</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="warning" fill="outline">
+        <ion-icon name="gift" style="padding-right: 10px;"></ion-icon>
+        <ion-label>Aksesoris</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="warning" fill="outline">
+        <ion-label>Lainnya</ion-label>
+        <ion-icon name="arrow-round-forward" style="padding-left: 10px;"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-item-divider sticky>
+    <ion-label>Pedagang Favorit</ion-label>
+  </ion-item-divider>
+
+  <ion-list lines="none">
+    <ion-item>
+      <div style="padding-right: 12px;">
+        <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+      </div>
+      <div style="padding-right: 12px;">
+        <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+      </div>
+      <div style="padding-right: 12px;">
+        <img src="/assets/avatar2.png" alt="" height="50px" width="50px" />
+      </div>
+      <div style="padding-right: 12px;">
+        <img src="/assets/avatar3.png" alt="" height="50px" width="50px" />
+      </div>
+      <div style="padding-right: 12px;">
+        <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+      </div>
+      <div>
+        <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+      </div>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-item-divider sticky>
+    <ion-label>MUGE News</ion-label>
+  </ion-item-divider>
+
+  <ion-slides pager>
+
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/logo1.png" alt="" style="background: yellow;"/>
+        <ion-card-content>Versi terbaru 1.0 dari MUGE sudah rilis</ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/logo1.png" alt="" style="background: yellow;"/>
+        <ion-card-content>Versi terbaru 1.1 dari MUGE sudah rilis</ion-card-content>
+      </ion-card>
+    </ion-slide>
+  
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/logo1.png" alt="" style="background: yellow;"/>
+        <ion-card-content>Versi terbaru 1.2 dari MUGE sudah rilis</ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+  </ion-slides>
 </ion-content>
