@@ -24,6 +24,10 @@ const routes: Routes = [
   },  {
     path: 'reset',
     loadChildren: () => import('./page/reset/reset.module').then( m => m.ResetPageModule)
+  },
+  {
+    path: 'tokosaya',
+    loadChildren: () => import('./page/tokosaya/tokosaya.module').then( m => m.TokosayaPageModule)
   }
 
 ];
