@@ -3,11 +3,11 @@
   <div style="text-align: center;">
       <img src="/assets/logo1.png" alt="" style="width: 50%; position: relative; padding-top: 10px;"/>
   </div>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Pencarian"></ion-searchbar>
   
   <ion-card color="light">
     <ion-card-content>
-      <ion-item color="warning" style="padding-bottom: 10px;">
+      <ion-item color="warning" lines="none" style="padding-bottom: 10px;">
         <ion-icon name="wallet" style="padding-right: 10px;"></ion-icon>
         <ion-label>MUGE PAY</ion-label>
         <div style="text-align: end;">
@@ -42,32 +42,28 @@
     <ion-label>MUGE Service</ion-label>
   </ion-item-divider>
   
-   <ion-row>
-    <ion-col>
-      <ion-button expand="block" color="warning" >
-        <ion-icon name="restaurant" style="padding-right: 10px;"></ion-icon>
-        <ion-label>Makanan</ion-label>
-      </ion-button>
-    </ion-col>
-    <ion-col>
-      <ion-button expand="block" color="warning" >
-        <ion-icon name="shirt" style="padding-right: 10px;"></ion-icon>
-        <ion-label>Pakaian</ion-label>
-      </ion-button>
-    </ion-col>
-    <ion-col>
-      <ion-button expand="block" color="warning" >
-        <ion-icon name="gift" style="padding-right: 10px;"></ion-icon>
-        <ion-label>Aksesoris</ion-label>
-      </ion-button>
-    </ion-col>
-    <ion-col>
-      <ion-button expand="block" color="warning" fill="outline">
-        <ion-label>Lainnya</ion-label>
-        <ion-icon name="arrow-round-forward" style="padding-left: 10px;"></ion-icon>
-      </ion-button>
-    </ion-col>
-  </ion-row>
+  <ion-list lines="none">
+    <ion-item>
+      <div class="scroll-container">
+        <div class="grid1" (click)="makanan()">
+          <img src="/assets/serv.png" alt="" height="45" width="45"/>
+          <ion-label><h6>Makanan</h6></ion-label>
+        </div>
+        <div class="grid1" (click)="pakaian()">
+          <img src="/assets/serv2.png" alt="" height="45" width="45"/>
+          <ion-label><h6>Pakaian</h6></ion-label>
+        </div>
+        <div class="grid1" (click)="aksesoris()">
+          <img src="/assets/serv1.png" alt="" height="45" width="45"/>
+          <ion-label><h6>Aksesoris</h6></ion-label>
+        </div>
+        <div class="grid1" (click)="menu()">
+          <img src="/assets/kat7.png" alt="" height="45" width="45"/>
+          <ion-label><h6>Lainnya</h6></ion-label>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
 
   <ion-item-divider sticky>
     <ion-label>Pedagang Favorit</ion-label>
@@ -75,23 +71,43 @@
 
   <ion-list lines="none">
     <ion-item>
-      <div style="padding-right: 12px;">
-        <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
-      </div>
-      <div style="padding-right: 12px;">
-        <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
-      </div>
-      <div style="padding-right: 12px;">
-        <img src="/assets/avatar2.png" alt="" height="50px" width="50px" />
-      </div>
-      <div style="padding-right: 12px;">
-        <img src="/assets/avatar3.png" alt="" height="50px" width="50px" />
-      </div>
-      <div style="padding-right: 12px;">
-        <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
-      </div>
-      <div>
-        <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+      <div class="scroll-container">
+        <div class="grid">
+          <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar2.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar3.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar2.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar3.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar.png" alt="" height="50px" width="50px" />
+        </div>
+        <div class="grid">
+          <img src="/assets/avatar1.png" alt="" height="50px" width="50px" />
+        </div>
       </div>
     </ion-item>
     
@@ -130,6 +146,9 @@
     <ion-label>MUGE Promo</ion-label>
   </ion-item-divider>
 
+  <ion-list>
+    
+  </ion-list>
   
   <ion-list>
     <h6 style="padding-left: 15px;">Coba Produk Terhits Disekitarmu !!</h6>

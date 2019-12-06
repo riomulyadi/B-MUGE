@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-toolbar color="warning" style="text-align: center;">
+      <ion-button (click)="kembali()" color="light" fill="clear" slot="start">
+        <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+      </ion-button>
+      <ion-label style="font-size: 120%; padding-top: 20px; text-align: center;">Makanan</ion-label>
+      <ion-button color="light" fill="clear" slot="end">
+        <ion-icon name="cart" style="font-size: 130%;"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+  <ion-toolbar color="warning">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Cari jajanan yuk !!"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider sticky>
+    <ion-label>MUGE Deals</ion-label>
+  </ion-item-divider>
+
+  <ion-slides pager>
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/deals1.png" alt="" style="background: rgb(255, 196, 0);"/>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/deals2.png" alt="" style="background: rgb(255, 196, 0);"/>
+      </ion-card>
+    </ion-slide>
+  
+    <ion-slide>
+      <ion-card color="light">
+        <img src="/assets/deals3.png" alt="" style="background: rgb(255, 196, 0);"/>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item-divider sticky>
+    <ion-label>Kategori</ion-label>
+  </ion-item-divider>
+
+  <ion-list lines="none">
+    <ion-item>
+      <div class="scroll-container">
+        <div class="grid">
+          <img src="/assets/kat1.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Menu Sehat</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat2.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>24 Jam</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat3.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Menu Baru</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat4.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Terdekat</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat5.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Terhits</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat6.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Menu Hemat</p></ion-label>
+        </div>
+        <div class="grid">
+          <img src="/assets/kat7.png" alt="" height="50" width="50"/>
+          <ion-label style="padding-top: 10px;"><p>Lihat Semua</p></ion-label>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-item-divider sticky>
+    <ion-label>PKL Di Sekitarmu</ion-label>
+  </ion-item-divider>
+
+  <ion-list>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan1.png" alt="" />
+      </div>
+      <ion-label>
+        <h3>Bakso Kuah Bang Tarjo</h3>
+        <p>Bakso keliling bang tarjo serba murah</p>
+        <h5>800 M</h5>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan2.png" alt="" />
+      </div>
+      <ion-label>
+        <h2>Siomay Pedas Dahsyat</h2>
+        <p>Siomay pedas dahsyat nya ready yaa</p>
+        <h5>950 M</h5>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan3.png" alt="" />
+      </div>
+      <ion-label>
+        <h2>Siomay Kuah Kacang Khas Bandung</h2>
+        <p>Melayani jasa antar pesanan</p>
+        <h5>1.2 KM</h5>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan4.png" alt="" />
+      </div>
+      <ion-label>
+        <h3>Batagor Bandung</h3>
+        <p>Menerima pesanan untuk pesta/acara</p>
+        <h5>1.5 KM</h5>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan5.png" alt="" />
+      </div>
+      <ion-label>
+        <h2>Sate Kecap Khas Madura</h2>
+        <p>Tersedia sate khas madura daging kambing dan ayam</p>
+        <h5>2.0 KM</h5>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="foto">
+        <img src="/assets/makanan6.png" alt="" />
+      </div>
+      <ion-label>
+        <h2>Bakso Goreng Leleh Keju</h2>
+        <p>Masih banyak varian rasa bakso</p>
+        <h5>2.5 KM</h5>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

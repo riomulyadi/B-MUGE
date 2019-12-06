@@ -24,6 +24,22 @@ const routes: Routes = [
   },  {
     path: 'tokosaya',
     loadChildren: () => import('./page/tokosaya/tokosaya.module').then( m => m.TokosayaPageModule)
+  },
+  {
+    path: 'makanan',
+    loadChildren: () => import('./page/makanan/makanan.module').then( m => m.MakananPageModule)
+  },
+  {
+    path: 'pakaian',
+    loadChildren: () => import('./page/pakaian/pakaian.module').then( m => m.PakaianPageModule)
+  },
+  {
+    path: 'aksesoris',
+    loadChildren: () => import('./page/aksesoris/aksesoris.module').then( m => m.AksesorisPageModule)
+  },
+  {
+    path: 'menulain',
+    loadChildren: () => import('./page/menulain/menulain.module').then( m => m.MenulainPageModule)
   }
 
 ];
