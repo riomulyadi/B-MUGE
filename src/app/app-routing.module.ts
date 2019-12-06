@@ -24,6 +24,10 @@ const routes: Routes = [
   },  {
     path: 'tokosaya',
     loadChildren: () => import('./page/tokosaya/tokosaya.module').then( m => m.TokosayaPageModule)
+  },
+  {
+    path: 'orderan',
+    loadChildren: () => import('./page/orderan/orderan.module').then( m => m.OrderanPageModule)
   }
 
 ];
