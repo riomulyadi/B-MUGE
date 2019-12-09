@@ -5,10 +5,10 @@
   </div>
   
   <ion-list>
-  <div style="text-align: center"><ion-label style="color: orange">DAFTAR</ion-label></div>
-  <ion-item>
-  <ion-input type="text" placeholder="Nama"></ion-input>
-    </ion-item> 
+	<div style="text-align: center"><ion-label style="color: orange">DAFTAR</ion-label></div>
+	<ion-item>
+	<ion-input type="text" placeholder="Nama"></ion-input>
+  </ion-item> 
 	
 	<ion-item>
 	<ion-input type="text" placeholder="Email"></ion-input>
@@ -25,10 +25,10 @@
 </ion-list>
 
 <div style="text-align: center">
-<ion-button color= "warning">DAFTAR</ion-button>
+<ion-button color= "warning" (click)="daftar()">DAFTAR</ion-button>
 
 <ion-buttons>
-     <ion-button color="warning">
+     <ion-button color="warning" (click)="login()">
 	 Sudah Punya Akun ?
 </ion-button>
 

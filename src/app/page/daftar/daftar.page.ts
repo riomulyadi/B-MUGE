@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-daftar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DaftarPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
   }
-
+  
+  daftar() {
+    this.navCtrl.navigateRoot('/tabs');
+  }
+  
+  login() {
+	this.navCtrl.navigateRoot('/login');
+  }
+	
 }
