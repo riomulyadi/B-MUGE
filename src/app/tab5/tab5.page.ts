@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab5',
@@ -8,17 +10,23 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab5Page implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(    
+    private router: Router,
+    public navCtrl: NavController) { }
 
   tokosaya() {
-  	this.navCtrl.navigateRoot('/tokosaya');
+  	this.router.navigate(['/tokosaya']);
   }
 
   keranjang() {
-  	this.navCtrl.navigateRoot('/keranjang');
+  	this.router.navigate(['/keranjang']);
   }
 
   ngOnInit() {
+  }
+
+  topup() {
+    this.router.navigate(['/topup']);
   }
 
 }

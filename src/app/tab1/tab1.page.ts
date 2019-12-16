@@ -8,7 +8,9 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController
+    ) {}
 
   makanan() {
     this.navCtrl.navigateRoot('/makanan');
