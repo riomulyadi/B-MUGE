@@ -21,7 +21,8 @@ const routes: Routes = [
   {
     path: 'tab5',
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
-  },  {
+  },
+  {
     path: 'tokosaya',
     loadChildren: () => import('./page/tokosaya/tokosaya.module').then( m => m.TokosayaPageModule)
   },
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'menulain',
     loadChildren: () => import('./page/menulain/menulain.module').then( m => m.MenulainPageModule)
+  },
+  {
+    path: 'topup',
+    loadChildren: () => import('./page/topup/topup.module').then( m => m.TopupPageModule)
   }
 
 ];
