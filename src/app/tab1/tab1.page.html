@@ -1,4 +1,13 @@
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <img src="/assets/img.svg" alt="" style="position: absolute;" /> 
   <div style="text-align: center;">
       <img src="/assets/logo1.png" alt="" style="width: 50%; position: relative; padding-top: 10px;"/>
@@ -10,8 +19,8 @@
       <ion-item color="warning" lines="none" style="padding-bottom: 10px;">
         <ion-icon name="wallet" style="padding-right: 10px;"></ion-icon>
         <ion-label>MUGE PAY</ion-label>
-        <div style="text-align: end;">
-          <ion-label>Rp. 35.000,-</ion-label>
+        <div style="text-align: end;" *ngFor="let saldo of saldos">
+          <ion-label>{{saldo.user_saldo}}</ion-label>
         </div>
         
       </ion-item>
@@ -26,12 +35,6 @@
           <ion-button color="warning" expand="full">
             <ion-icon name="arrow-round-down" style="padding-right: 5px;"></ion-icon>
             <ion-label>TARIK</ion-label>
-          </ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button color="warning" expand="full">
-            <ion-icon name="cash" style="padding-right: 5px;"></ion-icon>
-            <ion-label>HISTORY</ion-label>
           </ion-button>
         </ion-col>
       </ion-row>
@@ -214,4 +217,11 @@
     </ion-item>
   </ion-list>
 
+
+  <ion-infinite-scroll  (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
