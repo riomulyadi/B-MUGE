@@ -1,5 +1,7 @@
 {
   "name": "muge",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
