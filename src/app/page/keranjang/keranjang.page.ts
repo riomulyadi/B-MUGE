@@ -10,6 +10,10 @@ export class KeranjangPage implements OnInit {
 
   constructor(public navCtrl: NavController) { }
 
+  kembali() {
+  	this.navCtrl.navigateRoot('/tabs/tab5');
+  }
+
   ngOnInit() {
   }
 

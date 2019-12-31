@@ -88,19 +88,12 @@ const routes: Routes = [
   {
     path: 'bukajualan/:id/:nama/:desc/:harga',
     loadChildren: () => import('./page/bukajualan/bukajualan.module').then( m => m.BukajualanPageModule)
-  },  {
-    path: 'bayar',
-    loadChildren: () => import('./page/bayar/bayar.module').then( m => m.BayarPageModule)
   },
   {
-    path: 'belanjaan',
-    loadChildren: () => import('./page/belanjaan/belanjaan.module').then( m => m.BelanjaanPageModule)
-  },
-
-
-
-
-];
+    path: 'bayar',
+    loadChildren: () => import('./page/bayar/bayar.module').then( m => m.BayarPageModule)
+  }
+]
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
