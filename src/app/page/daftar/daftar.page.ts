@@ -12,22 +12,7 @@ import { async } from 'q';
   styleUrls: ['./daftar.page.scss'],
 })
 export class DaftarPage implements OnInit {
-
-
-  constructor(public navCtrl: NavController) { }
-
-  ngOnInit() {
-  }
-  
-  daftar() {
-    this.navCtrl.navigateRoot('/tabs');
-  }
-  
-  login() {
-	this.navCtrl.navigateRoot('/login');
-  }
 	
-
   full_name: string = '';
   phone_number: string = '';
   username: string = '';
