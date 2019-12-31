@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="warning" style="text-align: center;">
+        <ion-button (click)="kembali()" color="light" fill="clear" slot="start">
+            <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+        </ion-button>
+        <ion-label style="font-size: 120%; padding-top: 20px; text-align: center;">Jualan</ion-label>
+        <ion-button color="light" fill="clear" slot="end">
+            <ion-icon name="cart" color="warning" style="font-size: 130%;"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="/assets/noimg.png" alt="" style="margin: auto;"/>
+  <div padding>
+    <ion-label>
+      <h1>
+        {{nama_jualan}}
+      </h1>
+      <p>
+        {{desc_jualan}}
+      </p>
+      <h4>
+        RP. {{harga_jualan}}
+      </h4>
+    </ion-label>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+  <div padding>
+    Review
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <div style="text-align: center;">
+      <ion-button color="warning" size="large" expand="full">Beli</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
