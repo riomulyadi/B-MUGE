@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="warning" style="text-align: center;">
+      <ion-button (click)="kembali()" color="light" fill="clear" slot="start">
+          <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+      </ion-button>
+      <ion-label style="font-size: 120%; padding-top: 20px; text-align: center;">Tambah Jualan</ion-label>
+      <ion-button color="warning" fill="clear" slot="end">
+        <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center;">
+    <img src="/assets/noimage.jpg" alt="" height="150px" style="border-radius: 40%;"/>
+  </div>
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label position="floating">Nama Jualan</ion-label>
+      <ion-input type="text" [(ngModel)]="nama_jualan"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Kategori</ion-label>
+      <ion-select okText="Pilih" cancelText="Kembali" slot="end" [(ngModel)]="kat_jualan">
+        <ion-select-option selected="true" value="makanan">Makanan</ion-select-option>
+        <ion-select-option value="pakaian">Pakaian</ion-select-option>
+        <ion-select-option value="aksesoris">Aksesoris</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Harga</ion-label>
+      <ion-input type="number" [(ngModel)]="harga_jualan"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Deskripsi</ion-label>
+      <ion-textarea autosize type="text" [(ngModel)]="desc_jualan"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div style="text-align: center;">
+    <ion-button color="warning" expand="block" (click)="tambahjualan()">Tambah</ion-button>
+  </div>
+</ion-content>

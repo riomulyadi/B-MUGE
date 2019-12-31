@@ -31,7 +31,7 @@ export class Tab3Page implements OnInit {
       attribution: '',
     }).addTo(this.map);
 
-    icons: icon({
+    icon({
       iconUrl: './assets/pins.png',
       iconSize: [40, 100]
     });

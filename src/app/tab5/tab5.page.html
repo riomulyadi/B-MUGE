@@ -1,6 +1,6 @@
 <ion-content> 
   <img src="/assets/img.svg" alt="" style="position: absolute;"/>
-     <ion-button (click)="tokosaya()" color="dark" fill="outline" style="height:33px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
+     <ion-button (click)="tokosaya()" color="dark" fill="outline" style="height:50px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
         <ion-label color="dark">Toko Saya</ion-label>
 			  <ion-icon style="padding-left: 3px" name="arrow-round-forward" color="dark"></ion-icon>
 	   </ion-button>
@@ -12,7 +12,7 @@
 </ion-buttons>
 
 <div>
-  <ion-avatar item-start style="position: relative; float: left; padding-top: 5px; padding-bottom: 5px; padding-left: 10px">
+  <ion-avatar item-start style="position: relative; float: left; padding-top: 5px; padding-bottom: 5px; padding-left: 10px;">
     <img src="./assets/profil.png">
       </ion-avatar>
         <div style="position: relative; padding-top: 5px; padding-bottom:20px; padding-left: 70px">
@@ -24,7 +24,7 @@
         </div>
   
         <div style="text-align: center; padding-right: 10px; position: relative;">
-          <ion-button color="light" style=" height: 35px; padding-bottom: 10px; color: black">
+          <ion-button color="light" style="padding-bottom: 10px; color: black" (click)="topup()">
         <ion-icon class="rapi" name="wallet" color="warning"></ion-icon>
         MUGE Pay
           </ion-button>

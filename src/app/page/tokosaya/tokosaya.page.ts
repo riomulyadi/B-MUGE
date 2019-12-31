@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tokosaya',
@@ -8,13 +10,24 @@ import { NavController } from '@ionic/angular';
 })
 export class TokosayaPage implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(
+    private router: Router,
+    public navCtrl: NavController
+    ) { }
 
   kembali() {
-  	this.navCtrl.navigateRoot('/tabs/tab5');
+  	this.router.navigate(['/tabs/tab5']);
   }
 
   ngOnInit() {
+  }
+
+  tambahjualan() {
+  	this.router.navigate(['/tambahjualan']);
+  }
+
+  daftarjualan() {
+  	this.router.navigate(['/jualan']);
   }
 
 }
