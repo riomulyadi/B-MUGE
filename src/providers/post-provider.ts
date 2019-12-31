@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class PostProvider {
-    server: string = 'http://localhost/server/';
+    server: string = 'http://localhost/server_api/';
 
     constructor(public http: Http) {
 
