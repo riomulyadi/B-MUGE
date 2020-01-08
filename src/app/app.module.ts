@@ -12,11 +12,12 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { PostProvider } from '../providers/post-provider';
 import { IonicStorageModule } from '@ionic/storage';
+import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpModule, IonicStorageModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpModule, IonicStorageModule.forRoot(), AppRoutingModule, AutosizeModule],
   providers: [
     StatusBar,
     PostProvider,

@@ -19,6 +19,10 @@ export class TokosayaPage implements OnInit {
   	this.router.navigate(['/tabs/tab5']);
   }
 
+  notifikasi() {
+  	this.router.navigate(['/notifikasi']);
+  }
+
   ngOnInit() {
   }
 
@@ -28,6 +32,10 @@ export class TokosayaPage implements OnInit {
 
   daftarjualan() {
   	this.router.navigate(['/jualan']);
+  }
+
+  orderan() {
+    this.router.navigate(['/orderan']);
   }
 
 }

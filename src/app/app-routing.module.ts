@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./page/login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'orderan',
+    loadChildren: () => import('./page/orderan/orderan.module').then( m => m.OrderanPageModule)
+  },
+  {
     path: 'daftar',
     loadChildren: () => import('./page/daftar/daftar.module').then( m => m.DaftarPageModule)
   },
@@ -74,7 +78,7 @@ const routes: Routes = [
     loadChildren: () => import('./page/haljualan/haljualan.module').then( m => m.HaljualanPageModule)
   },
   {
-    path: 'updatejualan',
+    path: 'updatejualan/:id/:nama/:kat/:desc/:harga',
     loadChildren: () => import('./page/updatejualan/updatejualan.module').then( m => m.UpdatejualanPageModule)
   },
   {
@@ -92,7 +96,24 @@ const routes: Routes = [
   {
     path: 'bayar',
     loadChildren: () => import('./page/bayar/bayar.module').then( m => m.BayarPageModule)
+  },
+  {
+    path: 'status/:status',
+    loadChildren: () => import('./page/status/status.module').then( m => m.StatusPageModule)
+  },
+  {
+    path: 'belanjaan',
+    loadChildren: () => import('./page/belanjaan/belanjaan.module').then( m => m.BelanjaanPageModule)
+  },  {
+    path: 'notifikasi',
+    loadChildren: () => import('./page/notifikasi/notifikasi.module').then( m => m.NotifikasiPageModule)
+  },
+  {
+    path: 'sukses',
+    loadChildren: () => import('./page/sukses/sukses.module').then( m => m.SuksesPageModule)
   }
+
+
 ]
 @NgModule({
   imports: [
