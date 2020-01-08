@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController, AlertController } from '@ionic/angular';
-import { PostProvider } from '../../providers/post-provider';
+import { ToastController } from '@ionic/angular';
+import { PostProvider } from '../../../providers/post-provider';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-tab4',
-  templateUrl: './tab4.page.html',
-  styleUrls: ['./tab4.page.scss'],
+  selector: 'app-notifikasi',
+  templateUrl: './notifikasi.page.html',
+  styleUrls: ['./notifikasi.page.scss'],
 })
-export class Tab4Page implements OnInit {
+export class NotifikasiPage implements OnInit {
 
   jualans: any = [];
   limit: number = 100000;
@@ -21,8 +21,7 @@ export class Tab4Page implements OnInit {
     private router: Router,
     private postPvdr: PostProvider,
     public toastController: ToastController,
-    private storage: Storage,
-    private alertCtrl: AlertController
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -36,6 +35,10 @@ export class Tab4Page implements OnInit {
       this.anggota = res;
       this.username = this.anggota.username;
     });
+  }
+
+  kembali() {
+  	this.router.navigate(['/tokosaya']);
   }
 
   doRefresh(event) {
@@ -57,7 +60,7 @@ export class Tab4Page implements OnInit {
   loadJualan() {
     return new Promise(resolve => {
       let body = {
-        aksi: 'ambildatapesanan',
+        aksi: 'ambildatanotifikasi',
         limit : this.limit,
         start : this.start,
       };
@@ -71,38 +74,5 @@ export class Tab4Page implements OnInit {
     });
   }
 
-  async cancel(id) {
-    const alert = await this.alertCtrl.create({
-      header: 'Batalkan Pesanan!',
-      message: 'Anda ingin membatalkan pesanan ?',
-      buttons: [
-        {
-          text: 'Tidak',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Iya',
-          handler: () => {
-            this.batalkan(id);
-          }
-        }
-      ]
-    });
-    await alert.present();
-  }
-
-  batalkan(id) {
-    let body = {
-      aksi: 'cancel',
-      jualan_id : id
-    };
-
-    this.postPvdr.postData(body, 'file_aksi.php').subscribe(data => {
-      this.ionViewWillEnter();
-    });
-  }
 
 }
