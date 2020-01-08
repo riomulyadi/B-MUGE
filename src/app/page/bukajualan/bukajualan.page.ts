@@ -49,6 +49,7 @@ export class BukajualanPage implements OnInit {
     this.postPvdr.postData(body, 'file_aksi.php').subscribe(async data => {
       var alertpesan = data.msg;
       if (data.success) {
+        this.router.navigate(['/belanjaan']);
         const toast = await this.toastController.create({
           message: 'Jajanan Dimasukkan Ke Keranjang',
           duration: 2000

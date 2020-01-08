@@ -1,77 +1,75 @@
-<ion-content> 
-  <img src="/assets/img.svg" alt="" style="position: absolute;"/>
-     <ion-button (click)="tokosaya()" color="dark" fill="outline" style="height:50px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <img src="/assets/img.svg" alt="" style="position: absolute;" />
+    <ion-button (click)="tokosaya()" color="dark" fill="outline" style="height:50px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
         <ion-label color="dark">Toko Saya</ion-label>
-			  <ion-icon style="padding-left: 3px" name="arrow-round-forward" color="dark"></ion-icon>
-	   </ion-button>
-
-<ion-buttons style="position: relative; float: right; padding-top: 5px">
-  <ion-button (click)="keranjang()">
-    <ion-icon style="font-size: 200%" name="cart" color="dark"></ion-icon>
-  </ion-button>
-</ion-buttons>
-
-<div>
-  <ion-avatar item-start style="position: relative; float: left; padding-top: 5px; padding-bottom: 5px; padding-left: 10px;">
-    <img src="./assets/profil.png">
-      </ion-avatar>
-        <div style="position: relative; padding-top: 5px; padding-bottom:20px; padding-left: 70px">
-    	   <ion-label style="position: static;">
-    	     <h2>MARCEL JOSUA</h2>
-    	     <h4>Mau jajan apa lagi hari ini?</h4>
-    	     <h6>50 PTS</h6>
-    	   </ion-label>
-        </div>
-  
-        <div style="text-align: center; padding-right: 10px; position: relative;">
-          <ion-button color="light" style="padding-bottom: 10px; color: black" (click)="topup()">
-        <ion-icon class="rapi" name="wallet" color="warning"></ion-icon>
-        MUGE Pay
-          </ion-button>
-        </div>
-</div>
-
-<div>
-  <ion-list>
-  <ion-item>
-    <ion-icon class="rapi" name="heart-empty" color="danger"></ion-icon>
-      Favorit Saya
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="time" color="primary"></ion-icon>
-      Terakhir Dilihat
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="ribbon" color="tertiary"></ion-icon>
-      Point Saya
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="card" color="success"></ion-icon>
-      Voucher Saya
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="contact" color="dark"></ion-icon>
-      Pengaturan Profil
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="settings" color="dark"></ion-icon>
-      Pengaturan Akun
-  </ion-item>
-</ion-list><br>
-</div>
-
-  <div style="text-align: center; padding-right: 10px; position: relative;">
-    <ion-button color="warning" style="padding-bottom: 10px; color: black">
-      <ion-icon class="rapi" name="log-out" color="dark"></ion-icon>
-        <ion-label color="dark">KELUAR</ion-label>
+        <ion-icon style="padding-left: 3px" name="arrow-round-forward" color="dark"></ion-icon>
     </ion-button>
-  </div>
 
-<ion-item-divider>
-</ion-item-divider>
+    <ion-buttons style="position: relative; float: right; padding-top: 5px">
+        <ion-button (click)="keranjang()">
+            <ion-icon style="font-size: 200%" name="cart" color="dark"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+
+    <div>
+        <ion-avatar item-start style="position: relative; float: left; padding-top: 5px; padding-bottom: 5px; padding-left: 10px;">
+            <img src="./assets/profil.png">
+        </ion-avatar>
+        <div style="position: relative; padding-top: 5px; padding-bottom:20px; padding-left: 70px">
+            <ion-label style="position: static;">
+                <h2 style="font-weight: bold;">{{full_name}}</h2>
+                <h4>{{status}}</h4>
+            </ion-label>
+        </div>
+
+        <div style="text-align: center; padding-right: 10px; position: relative;">
+            <ion-button color="light" style="padding-bottom: 10px; color: black" (click)="topup()">
+                <ion-icon class="rapi" name="wallet" color="warning"></ion-icon>
+                MUGE Pay
+            </ion-button>
+        </div>
+    </div>
+
+    <div>
+        <ion-list>
+
+            <ion-item (click)="updatestatus(status)">
+                <ion-icon class="rapi" name="time" color="primary"></ion-icon>
+                Update Status
+            </ion-item>
+
+            <ion-item>
+                <ion-icon class="rapi" name="ribbon" color="tertiary"></ion-icon>
+                Point Saya
+            </ion-item>
+
+            <ion-item>
+                <ion-icon class="rapi" name="card" color="success"></ion-icon>
+                Voucher Saya
+            </ion-item>
+
+            <ion-item>
+                <ion-icon class="rapi" name="contact" color="dark"></ion-icon>
+                Pengaturan Profil
+            </ion-item>
+
+            <ion-item>
+                <ion-icon class="rapi" name="settings" color="dark"></ion-icon>
+                Pengaturan Akun
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <div style="text-align: center;">
+        <ion-button color="warning" (click)="logout()">Log Out</ion-button>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
