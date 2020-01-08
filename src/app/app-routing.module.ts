@@ -49,7 +49,8 @@ const routes: Routes = [
   {
     path: 'orderan',
     loadChildren: () => import('./page/orderan/orderan.module').then( m => m.OrderanPageModule)
-	
+  },
+  {
     path: 'makanan',
     loadChildren: () => import('./page/makanan/makanan.module').then( m => m.MakananPageModule)
   },
