@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="warning" style="text-align: center;">
+        <ion-button (click)="kembali()" color="light" fill="clear" slot="start">
+            <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+        </ion-button>
+        <ion-label style="font-size: 120%; padding-top: 20px; text-align: center;">Notifikasi</ion-label>
+        <ion-button color="warning" fill="clear" slot="end">
+            <ion-icon name="arrow-back" style="font-size: 120%;"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+        <ion-item (click)="orderan()" *ngFor="let jualan of jualans">
+            <div class="foto">
+                <img src="/assets/noimg.png" alt="" />
+            </div>
+            <ion-label style="padding-left: 15px;">
+                <h2>{{jualan.nama_jualan}} Baru Saja Dibeli</h2>
+                <p>Cek Sekarang Disini!</p>
+                <p>{{jualan.create_at}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
