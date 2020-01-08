@@ -1,54 +1,56 @@
-  <ion-content>
-	<img src="/assets/sate1.jpg" alt="" style="position: absolute;"/>
-	<ion-button (click)="kembali()" color="warning" style="height:33px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
-		<ion-label color="dark">Kembali</ion-label>
-			<ion-icon style="padding-left: 3px" name="arrow-round-back" color="dark"></ion-icon>
-	</ion-button>
+<ion-content>
+    <img src="/assets/sate1.jpg" alt="" style="position: absolute;" />
+    <ion-button (click)="kembali()" color="warning" style="height:30px; width: 150px; padding-top: 5px; padding-left: 5px; padding-bottom: 5px">
+        <ion-label color="dark">Kembali</ion-label>
+        <ion-icon style="padding-left: 3px" name="arrow-round-back" color="dark"></ion-icon>
+    </ion-button>
 
-	<ion-row>
-		<ion-col></ion-col>
-		<ion-col>
-     		<br><br><br><br><img class="gambar" style="position: relative;" src="./assets/sateicon.jpg">
-    	</ion-col>
-		<ion-col></ion-col>
-	</ion-row>
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+            <br><br><br><br><img class="gambar" style="position: relative;" src="./assets/sateicon.jpg">
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
 
-   <div style="text-align: center;">
-   <h5>SATE PADANG PAK HAJI<br>
-   4.5<ion-icon style="font-size: 20px" name="star" color="warning"></ion-icon></h5>
-   </div>
+    <div style="text-align: center;">
+        <h5>SATE PADANG PAK HAJI<br> 4.5
+            <ion-icon style="font-size: 20px" name="star" color="warning"></ion-icon>
+        </h5>
+    </div>
 
-   <div style= "text-align: center;">
-    <p style="font-size: 75%"><ion-icon class="rapi" name="pin" color="dark"></ion-icon>Jalan Teuku Nyak Arief, Kopelma Darusallam</p>
+    <div style="text-align: center;">
+        <p style="font-size: 75%">
+            <ion-icon class="rapi" name="pin" color="dark"></ion-icon>Jalan Teuku Nyak Arief, Kopelma Darusallam</p>
 
-      <ion-button style="height: 25px;" color="warning">
-        <ion-icon color="dark" class="rapi" name="notifications"></ion-icon>
-         <ion-label color="dark">Notifikasi</ion-label>
-      </ion-button>
+        <ion-button color="warning" (click)="notifikasi()">
+            <ion-icon color="dark" class="rapi" name="notifications"></ion-icon>
+            <ion-label color="dark"> Notifikasi </ion-label>
+        </ion-button>
 
-   </div>
+    </div>
 
-<ion-list>
-  <ion-item>
-    <ion-icon class="rapi" name="wallet" color="warning"></ion-icon>
-      MUGE Pay
-  </ion-item>
+    <ion-list>
+        <ion-item>
+            <ion-icon class="rapi" name="wallet" color="warning"></ion-icon>
+            MUGE Pay
+        </ion-item>
 
-  <ion-item (click)="tambahjualan()">
-    <ion-icon class="rapi" name="add-circle" color="danger"></ion-icon>
-      Tambah Jualan
-    </ion-item>
-  
-  <ion-item (click)="daftarjualan()">
-    <ion-icon class="rapi" name="cart" color="primary"></ion-icon>
-      Daftar Jualan
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon class="rapi" name="basket" color="success"></ion-icon>
-      Orderan
-    </ion-item>
-	</ion-list>
-  <ion-item-divider>
-  </ion-item-divider>
+        <ion-item (click)="tambahjualan()">
+            <ion-icon class="rapi" name="add-circle" color="danger"></ion-icon>
+            Tambah Jualan
+        </ion-item>
+
+        <ion-item (click)="daftarjualan()">
+            <ion-icon class="rapi" name="cart" color="primary"></ion-icon>
+            Daftar Jualan
+        </ion-item>
+
+        <ion-item (click)="orderan()">
+            <ion-icon class="rapi" name="basket" color="success"></ion-icon>
+            Orderan
+        </ion-item>
+    </ion-list>
+    <ion-item-divider>
+    </ion-item-divider>
 </ion-content>
