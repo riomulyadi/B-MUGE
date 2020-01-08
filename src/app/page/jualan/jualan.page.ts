@@ -68,8 +68,8 @@ export class JualanPage implements OnInit {
       });
   }
 
-  updatejualan(id) {
-    this.router.navigate(['/updatejualan/' + id]);
+  updatejualan(id, nama, kat, desc, harga) {
+    this.router.navigate(['/updatejualan/' + id + '/' + nama + '/' + kat + '/' + desc + '/' + harga]);
   }
 
   loadJualan() {

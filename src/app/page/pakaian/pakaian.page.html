@@ -14,6 +14,15 @@
   </ion-header>
   
   <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+      </ion-refresher-content>
+  </ion-refresher>
+
     <ion-item-divider sticky>
       <ion-label>MUGE Deals</ion-label>
     </ion-item-divider>
@@ -133,5 +142,29 @@
         </ion-label>
       </ion-item>
     </ion-list>
+
+    <ion-item-divider sticky>
+      <ion-label>Menu Pilihan</ion-label>
+  </ion-item-divider>
+
+  <ion-list>
+      <ion-item *ngFor="let jualan of jualans" (click)="bukajualan(jualan.jualan_id,jualan.nama_jualan,jualan.desc_jualan,jualan.harga_jualan)">
+          <div class="foto">
+              <img src="/assets/noimg.png" alt="" />
+          </div>
+          <ion-label>
+              <h3>{{jualan.nama_jualan}}</h3>
+              <p>{{jualan.desc_jualan}}</p>
+              <h5>RP. {{jualan.harga_jualan}}</h5>
+          </ion-label>
+      </ion-item>
+  </ion-list>
+
+    <ion-infinite-scroll  (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-content>
   
