@@ -12,11 +12,13 @@ import { Storage } from '@ionic/storage';
 })
 export class MakananPage implements OnInit {
 
+  deals: any = [];
   jualans: any = [];
   limit: number = 100000;
   start: number = 0;
   username: string;
   anggota: any;
+  full_name: string;
 
   constructor(public navCtrl: NavController,
     private router: Router,
@@ -39,10 +41,12 @@ export class MakananPage implements OnInit {
   ionViewWillEnter() {
     this.jualans = [];
     this.start = 0;
+    this.loadDeals();
     this.loadJualan();
     this.storage.get('session_storage').then((res) => {
       this.anggota = res;
       this.username = this.anggota.username;
+      this.full_name = this.anggota.full_name;
     });
   }
 
@@ -60,16 +64,21 @@ export class MakananPage implements OnInit {
   loadData(event: any) {
     this.start += this.limit;
     setTimeout(() => {
-    this.loadJualan().then(() => {
-    event.target.complete();
-    });
+      this.loadJualan().then(() => {
+        event.target.complete();
+      });
+    }, 500);
+    setTimeout(() => {
+      this.loadDeals().then(() => {
+        event.target.complete();
+      });
     }, 500);
   }
 
   loadJualan() {
     return new Promise(resolve => {
       let body = {
-        aksi: 'ambildata',
+        aksi: 'ambilmakanan',
         limit : this.limit,
         start : this.start,
       };
@@ -83,4 +92,20 @@ export class MakananPage implements OnInit {
     });
   }
 
+  loadDeals() {
+    return new Promise(resolve => {
+      let body = {
+        aksi: 'ambildata5000',
+        limit : this.limit,
+        start : this.start,
+      };
+
+      this.postPvdr.postData(body, 'file_aksi.php').subscribe(data => {
+        for (let deal of data.result) {
+          this.deals.push(deal);
+        }
+        resolve(true);
+      });
+    });
+  }
 }
