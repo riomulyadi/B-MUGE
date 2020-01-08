@@ -27,14 +27,7 @@ export class Tab3Page implements OnInit {
   leafletMap() {
     // In setView add latLng and zoom
     this.map = new Map('map').setView([5.5710605, 95.3702474], 100);
-    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '',
-    }).addTo(this.map);
-
-    icon({
-      iconUrl: './assets/pins.png',
-      iconSize: [40, 100]
-    });
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
 
     marker([5.5715425, 95.3711706]).addTo(this.map)
       .bindPopup('Bakso Bakar Bang Tarjo')
